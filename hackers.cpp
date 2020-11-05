@@ -20,7 +20,29 @@ int main()
     std::cout << "The codes add up to: " << CodeSum << std::endl;
     std::cout << "The codes multiply to: " << CodeProd << std::endl;
 
-    int PlayerGuess;
+    int GuessA, GuessB, GuessC;
+
+    std::cout << "Now it's time for you to start entering codes.  Remember to only enter numbers." <<std::endl;
+    std::cout << "Enter the code for the first number: "; 
+    std::cin >> GuessA;
+    std::cout << "Enter the code for the second number: "; 
+    std::cin >> GuessB;
+    std::cout << "Enter the code for the third number: "; 
+    std::cin >> GuessC;
+    std::cout << std::endl;
+
+    int GuessSum = GuessA + GuessB + GuessC;
+    int GuessProd = GuessA * GuessB * GuessC;
+
+    if(GuessSum == CodeSum && GuessProd == CodeProd)
+    {
+        std::cout << "Hack the planet!  You saved the tanker!  Good job, Hacker.";
+    }
+    else
+    {
+        std::cout << "Bad smarts.  The tanker sank and the oil refinery has been destroyed.  Better luck next time.";
+    }
+    
 
     return 0;
 }
