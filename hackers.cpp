@@ -7,14 +7,12 @@ int main()
     std::cout << "It is up to you to save the tanker from a massive oil spill.  In order to stop this mayhem from ensuing, you must enter the correct codes to defeat The Plague.";
     std::cout << std::endl;
 
-    int a = 4;
-    int b = 9;
-    int c = 23;
+    const int a = 3;
+    const int b = 9;
+    const int c = 27;
 
-    a = 3;
-
-    int sum = a + b + c;
-    int prod = a * b * c;
+    const int sum = a + b + c;
+    const int prod = a * b * c;
 
     std::cout << sum << std::endl;
     std::cout << prod;
