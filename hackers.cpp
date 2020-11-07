@@ -4,7 +4,7 @@
 void PrintIntroduction(int Difficulty)
 {
     std::cout << "\n\nWelcome, Hacker. ZeroCool needs your help!  \nIt is up to you to enter the correct codes to save the tanker from a massive oil spill.  Right now, you're hacking into a Level " << Difficulty;
-    std::cout << " Terminal.  \nIn order to stop this mayhem from ensuing, you must enter the correct codes to defeat The Plague.  Make it all the way to Level 10, and you will have saved the day!\n\n";
+    std::cout << " Terminal.  \nIn order to stop this mayhem from ensuing, you must enter the correct codes to defeat The Plague.  Make it all the way to Level 5, and you will have saved the day!\n\n";
 }
 
 bool PlayGame(int Difficulty)
@@ -42,12 +42,12 @@ bool PlayGame(int Difficulty)
     // Check if guess is correct
     if(GuessSum == CodeSum && GuessProd == CodeProd)
     {
-        std::cout << "\nHack the planet!  You saved the tanker!  Good job, Hacker.\n";
+        std::cout << "\n Good job, Hacker.  You stopped the command.  Keep going!\n";
         return true;
     }
     else
     {
-        std::cout << "\nBad smarts.  The tanker sank and the oil refinery has been destroyed.  Better luck next time.\n";
+        std::cout << "\nBad smarts.  The Plague executed his command.  Try again.\n";
         return false;
     }
 }
@@ -55,12 +55,13 @@ bool PlayGame(int Difficulty)
 int main()
 {
     int LevelDifficulty = 1;
+    const int MaxDifficulty = 5;
 
-    while(true)
+    while (LevelDifficulty <= MaxDifficulty) // Loop game until all levels are completed
     {
         bool bLevelComplete = PlayGame(LevelDifficulty);
-        std::cin.clear(); 
-        std::cin.ignore();
+        std::cin.clear(); // Clears any errors
+        std::cin.ignore(); // Discards the buffer
 
         if (bLevelComplete)
         {
@@ -68,6 +69,7 @@ int main()
         }
         
     }
-    
+    // When all levels are completed, the game will exit
+    std::cout << "\nHack the planet!  You saved the tanker and stopped the oil spill!  Good job, Hacker.  Now get out of there!\n";
     return 0;
 }
