@@ -1,9 +1,18 @@
 #include <iostream>
 
-int main()
+// void means the fx will return no data
+void PrintIntroduction()
 {
-    std::cout << "Welcome, Hacker. ZeroCool needs your help!  \nIt is up to you to enter the correct codes to save the tanker from a massive oil spill.  \nIn order to stop this mayhem from ensuing, you must enter the correct codes to defeat The Plague." << std::endl;
+    // Intro messages
+    std::cout << "Welcome, Hacker. ZeroCool needs your help!  \nIt is up to you to enter the correct codes to save the tanker from a massive oil spill.  \nIn order to stop this mayhem from ensuing, you must enter the correct codes to defeat The Plague. \n\n";
+}
 
+void PlayGame()
+{
+    // Call my fx
+    PrintIntroduction();
+    
+    // Code Variables
     const int CodeA = 1;
     const int CodeB = 3;
     const int CodeC = 5;
@@ -39,7 +48,10 @@ int main()
     {
         std::cout << "Bad smarts.  The tanker sank and the oil refinery has been destroyed.  Better luck next time.";
     }
-    
+}
 
+int main()
+{
+    PlayGame();
     return 0;
 }
