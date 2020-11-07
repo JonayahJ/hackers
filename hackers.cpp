@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 
 // void means the fx will return no data
 void PrintIntroduction(int Difficulty)
@@ -13,9 +14,9 @@ bool PlayGame(int Difficulty)
     PrintIntroduction(Difficulty);
     
     // Code Variables
-    const int CodeA = rand();
-    const int CodeB = rand();
-    const int CodeC = rand();
+    const int CodeA = rand() % Difficulty + Difficulty;
+    const int CodeB = rand() % Difficulty + Difficulty;
+    const int CodeC = rand() % Difficulty + Difficulty;
 
     const int CodeSum = CodeA + CodeB + CodeC;
     const int CodeProd = CodeA * CodeB * CodeC;
@@ -42,7 +43,7 @@ bool PlayGame(int Difficulty)
     // Check if guess is correct
     if(GuessSum == CodeSum && GuessProd == CodeProd)
     {
-        std::cout << "\n Good job, Hacker.  You stopped the command.  Keep going!\n";
+        std::cout << "\n **Good job, Hacker.  You stopped the command.  Keep going!**\n";
         return true;
     }
     else
@@ -54,11 +55,13 @@ bool PlayGame(int Difficulty)
 
 int main()
 {
+    srand(time(NULL));
     int LevelDifficulty = 1;
     const int MaxDifficulty = 5;
 
     while (LevelDifficulty <= MaxDifficulty) // Loop game until all levels are completed
     {
+        // std::cout << rand() % 2 << "\n";
         bool bLevelComplete = PlayGame(LevelDifficulty);
         std::cin.clear(); // Clears any errors
         std::cin.ignore(); // Discards the buffer
@@ -70,6 +73,6 @@ int main()
         
     }
     // When all levels are completed, the game will exit
-    std::cout << "\nHack the planet!  You saved the tanker and stopped the oil spill!  Good job, Hacker.  Now get out of there!\n";
+    std::cout << "\n*****Hack the planet!  You saved the tanker and stopped the oil spill!  Good job, Hacker.  Now get out of there!*****\n\n\n";
     return 0;
 }
